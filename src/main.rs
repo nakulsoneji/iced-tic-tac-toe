@@ -93,7 +93,7 @@ impl Sandbox for Game {
     }
 
     fn title(&self) -> String {
-        String::from("Icy Tic Tac Toe")
+        String::from("Iced Tic Tac Toe")
     }
 
     fn update(&mut self, message: Message) {
