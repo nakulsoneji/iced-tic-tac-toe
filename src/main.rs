@@ -3,6 +3,7 @@ use iced::{Alignment, Element, Sandbox, Settings, theme, Theme, Length};
 use iced::alignment::{Horizontal, Vertical};
 
 const BASE_SIZE: u16 = 6;
+
 pub fn main() -> iced::Result {
     Game::run(Settings::default())
 }
@@ -123,7 +124,7 @@ impl Sandbox for Game {
 fn make_button<'a>(index: [usize; 2], game: &Game) -> Button<'a, Message>{
     let size = BASE_SIZE * 16;
     let color;
-    let (_, indices) = game.check_win().unwrap_or((Default::default(), Default::default()));
+    let (_, indices) = game.check_win().unwrap_or_else(|| (Default::default(), Default::default()));
 
     if game.is_winner() && indices.iter().any(|&x| x == index) {
         color = ButtonColor::new(iced::Color::from_rgb(255.0, 255.0, 0.0), Default::default());
