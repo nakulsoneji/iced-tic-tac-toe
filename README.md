@@ -1,1 +1,1 @@
-simple tictactoe made with iced-rs
+TicTacToe made with iced-rs
